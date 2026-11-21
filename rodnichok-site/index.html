@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Родничок — вода, соки, лимонады и консервация | ООО «Шарбати Мева»</title>
+<meta name="description" content="ООО «Шарбати Мева» — производитель питьевой воды «Родничок», соков Fructo, лимонадов «Вкус детства», нектаров «Солнечная долина» и консервации. Палас, Таджикистан. Бренд года 2022.">
+<meta name="theme-color" content="#06204a">
+<meta property="og:title" content="Родничок — чистота гор в каждой капле">
+<meta property="og:description" content="Вода, соки, лимонады и консервация от ООО «Шарбати Мева». Таджикистан.">
+<meta property="og:image" content="assets/img/hero-6l.webp">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ PRELOADER: логотип наполняется водой ============ -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__logo">
+    <div class="loader__ghost"></div>
+    <div class="loader__fill"><svg class="loader__wave" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0 60 Q150 0 300 60 T600 60 T900 60 T1200 60 V120 H0Z"/></svg></div>
+  </div>
+  <div class="loader__count"><span>0</span>%</div>
+  <div class="loader__hint">наполняем…</div>
+</div>
+
+<!-- ============ курсор-капля и пузырьки ============ -->
+<canvas class="bubbles" aria-hidden="true"></canvas>
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ индикатор прокрутки: бутылка наполняется ============ -->
+<a href="#top" class="bottle-progress" aria-label="Наверх">
+  <svg viewBox="0 0 40 90">
+    <defs><clipPath id="bottleClip"><path d="M15 2h10v8c0 3 9 7 9 16v56c0 4-3 6-6 6H12c-3 0-6-2-6-6V26c0-9 9-13 9-16z"/></clipPath></defs>
+    <g clip-path="url(#bottleClip)">
+      <rect width="40" height="90" fill="rgba(255,255,255,.12)"/>
+      <g class="bottle-progress__water"><path d="M-40 6 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 V200 H-40Z"/></g>
+    </g>
+    <path class="bottle-progress__outline" d="M15 2h10v8c0 3 9 7 9 16v56c0 4-3 6-6 6H12c-3 0-6-2-6-6V26c0-9 9-13 9-16z"/>
+  </svg>
+</a>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <a href="#top" class="header__logo" aria-label="Родничок — на главную"><img src="assets/img/logo-white.png" alt="Родничок"></a>
+  <nav class="header__nav" aria-label="Основное меню">
+    <a href="#products" data-cursor="Линейки">Продукция</a>
+    <a href="#journey" data-cursor="Путь">Путь капли</a>
+    <a href="#awards" data-cursor="Награды">Награды</a>
+    <a href="#factory" data-cursor="Завод">Производство</a>
+    <a href="#contact" data-cursor="Связь">Контакты</a>
+  </nav>
+  <a href="tel:+992928420088" class="header__phone btn-liquid magnetic"><span>+992 92 842 00 88</span></a>
+  <button class="header__burger" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
+</header>
+<div class="mobile-menu" aria-hidden="true">
+  <a href="#products">Продукция</a><a href="#journey">Путь капли</a><a href="#awards">Награды</a><a href="#factory">Производство</a><a href="#contact">Контакты</a>
+  <a class="mobile-menu__phone" href="tel:+992928420088">+992 92 842 00 88</a>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO: WebGL-вода + кинетическая типографика ============ -->
+<section class="hero">
+  <canvas class="hero__water" aria-hidden="true"></canvas>
+  <div class="hero__rays" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="hero__kicker"><span class="dot"></span> ООО «Шарбати Мева» · Палас, Таджикистан</p>
+    <div class="hero__blob" data-cursor="Родничок 6 л">
+      <img src="assets/img/hero-6l.webp" alt="Питьевая вода «Родничок» 6 литров" fetchpriority="high">
+    </div>
+    <h1 class="hero__title" aria-label="Родничок"><span class="split-chars">Родничок</span></h1>
+    <div class="hero__bottom">
+      <p class="hero__lead">Чистота гор в каждой капле. Вода, соки, лимонады и консервация, созданные под солнцем Таджикистана.</p>
+      <a href="#products" class="hero__scroll" data-cursor="Вниз"><span>Листайте</span><i></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE: две перекрещенные ленты ============ -->
+<section class="ribbons" aria-hidden="true">
+  <div class="ribbon ribbon--a"><div class="ribbon__track">
+    <span>Вода</span><b>✦</b><span>Соки</span><b>✦</b><span>Лимонады</span><b>✦</b><span>Нектары</span><b>✦</b><span>Консервация</span><b>✦</b>
+  </div></div>
+  <div class="ribbon ribbon--b"><div class="ribbon__track">
+    <span>Фрукты, солнце и ничего больше</span><b>●</b><span>Качество говорит само за себя</span><b>●</b>
+  </div></div>
+</section>
+
+<!-- ============ МАНИФЕСТ: текст проявляется при прокрутке ============ -->
+<section class="manifest">
+  <p class="manifest__label">— О нас</p>
+  <p class="manifest__text reveal-words">
+    Мы берём воду <span class="pill"><img src="assets/img/water.webp" alt=""></span> чистую, как горный родник, и фрукты <span class="pill"><img src="assets/img/fructo.webp" alt=""></span> налитые солнцем Согда. Ничего лишнего: <em>без концентратов</em>, с заботой о каждой бутылке <span class="pill"><img src="assets/img/vd.webp" alt=""></span> и каждой банке <span class="pill"><img src="assets/img/konservy.webp" alt=""></span> — от источника до вашего стола.
+  </p>
+</section>
+
+<!-- ============ ПРОДУКЦИЯ: горизонтальный скролл с перетеканием цвета ============ -->
+<section class="lines" id="products">
+  <div class="lines__head">
+    <p class="lines__label">— Наши линейки</p>
+    <div class="lines__progress"><i></i></div>
+  </div>
+  <div class="lines__track">
+
+    <article class="line" data-bg="#0a3a8c" data-fg="#eaf6ff" data-accent="#7fd8ff">
+      <div class="line__text">
+        <span class="line__num">01</span>
+        <h2 class="line__title">Родничок</h2>
+        <p class="line__sub">Питьевая очищенная столовая вода</p>
+        <p class="line__desc">Негазированная вода для всей семьи: от компактной бутылки в спортзал до шестилитровой бутыли для кухни.</p>
+        <ul class="chips"><li>0,5 л</li><li>1 л</li><li>1,5 л</li><li>6 л</li><li>Спорт</li><li>Спорт-Актив</li></ul>
+      </div>
+      <figure class="line__media" data-cursor="Вода"><div class="line__img"><img src="assets/img/water.webp" alt="Линейка воды «Родничок»" loading="lazy"></div></figure>
+    </article>
+
+    <article class="line" data-bg="#f39a2b" data-fg="#2b1300" data-accent="#fff2d6">
+      <div class="line__text">
+        <span class="line__num">02</span>
+        <h2 class="line__title">Fructo</h2>
+        <p class="line__sub">Фруктовый сок · 750 мл</p>
+        <p class="line__desc">Сок без концентратов, с витамином C. «Фрукты, солнце и ничего больше!» — написано прямо на крышке.</p>
+        <ul class="chips"><li>Гранат</li><li>Персик</li><li>Абрикос</li><li>Мультифрукт</li></ul>
+      </div>
+      <figure class="line__media" data-cursor="Fructo"><div class="line__img"><img src="assets/img/fructo.webp" alt="Соки Fructo" loading="lazy"></div></figure>
+    </article>
+
+    <article class="line" data-bg="#e8426f" data-fg="#fff4f6" data-accent="#c8f26a">
+      <div class="line__text">
+        <span class="line__num">03</span>
+        <h2 class="line__title">Вкус детства</h2>
+        <p class="line__sub">Сильногазированный лимонад</p>
+        <p class="line__desc">Хрустальное стекло, яркие пузырьки и тот самый вкус, который помнят с детства.</p>
+        <ul class="chips"><li>Мохито-клубника</li><li>Яблоко</li><li>Мохито</li><li>Апельсин</li><li>Гранат</li></ul>
+      </div>
+      <figure class="line__media" data-cursor="Лимонады"><div class="line__img"><img src="assets/img/vkus-detstva.webp" alt="Лимонады «Вкус детства»" loading="lazy"></div></figure>
+    </article>
+
+    <article class="line" data-bg="#111214" data-fg="#f4f4f4" data-accent="#9be15d">
+      <div class="line__text">
+        <span class="line__num">04</span>
+        <h2 class="line__title">VD</h2>
+        <p class="line__sub">«Вкус детства» в новом формате</p>
+        <p class="line__desc">Дерзкий дизайн, удобная бутылка и шесть вкусов для тех, кто всегда в движении.</p>
+        <ul class="chips"><li>Мохито клубничный</li><li>Яблоко</li><li>Мохито</li><li>Апельсин</li><li>Гранат</li><li>Груша</li></ul>
+      </div>
+      <figure class="line__media" data-cursor="VD"><div class="line__img"><img src="assets/img/vd.webp" alt="Лимонады VD" loading="lazy"></div></figure>
+    </article>
+
+    <article class="line" data-bg="#1f7a3a" data-fg="#f3ffe9" data-accent="#ffd35a">
+      <div class="line__text">
+        <span class="line__num">05</span>
+        <h2 class="line__title">Солнечная долина</h2>
+        <p class="line__sub">Соки и нектары в кувшинах</p>
+        <p class="line__desc">Семь вкусов в узнаваемом стеклянном кувшине с ручкой, чтобы ставить на стол.</p>
+        <ul class="chips"><li>Яблоко</li><li>Гранат</li><li>Мультифрукт</li><li>Банан-клубника</li><li>Абрикос</li><li>Вишня</li><li>Персик</li></ul>
+      </div>
+      <figure class="line__media line__media--wide" data-cursor="Долина"><div class="line__img"><img src="assets/img/solnechnaya-dolina.webp" alt="Соки «Солнечная долина»" loading="lazy"></div></figure>
+    </article>
+
+    <article class="line" data-bg="#b3261e" data-fg="#fff3ec" data-accent="#7ed957">
+      <div class="line__text">
+        <span class="line__num">06</span>
+        <h2 class="line__title">Консервация</h2>
+        <p class="line__sub">Овощи по домашним рецептам</p>
+        <p class="line__desc">Хрустящие корнишоны, сочные томаты и острая аджика, как из бабушкиного погреба.</p>
+        <ul class="chips"><li>Аджика жгучая</li><li>Томаты черри и корнишоны</li><li>Корнишоны</li><li>Ассорти</li><li>Огурцы маринованные</li><li>Помидоры в собственном соку</li></ul>
+      </div>
+      <figure class="line__media" data-cursor="Консервы"><div class="line__img"><img src="assets/img/konservy.webp" alt="Консервация «Родничок»" loading="lazy"></div></figure>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ ПУТЬ КАПЛИ: SVG-путь рисуется, капля стекает ============ -->
+<section class="journey" id="journey">
+  <div class="journey__head">
+    <p class="section-label">— Путь капли</p>
+    <h2 class="section-title split-lines">От горного источника<br>до вашего стола</h2>
+  </div>
+  <div class="journey__body">
+    <svg class="journey__svg" aria-hidden="true"><path class="journey__track"/><path class="journey__line"/></svg>
+    <div class="journey__drop" aria-hidden="true"><svg viewBox="0 0 40 52"><path d="M20 0C20 0 0 24 0 34a20 18 0 0 0 40 0C40 24 20 0 20 0z"/><ellipse cx="13" cy="33" rx="4" ry="7" fill="#fff" opacity=".55"/></svg></div>
+
+    <ol class="steps">
+      <li class="step"><span class="step__n">01</span><h3>Источник</h3><p>Всё начинается с чистой воды. Горы Таджикистана — наше главное богатство.</p></li>
+      <li class="step"><span class="step__n">02</span><h3>Очистка</h3><p>Многоступенчатая очистка превращает воду в питьевую столовую воду «Родничок».</p></li>
+      <li class="step"><span class="step__n">03</span><h3>Солнце и фрукты</h3><p>Абрикосы, персики, гранаты и овощи из плодородной Согдийской долины.</p></li>
+      <li class="step"><span class="step__n">04</span><h3>Розлив</h3><p>Вода в ПЭТ, соки и лимонады в стекло. Каждая бутылка и банка под контролем.</p></li>
+      <li class="step"><span class="step__n">05</span><h3>На ваш стол</h3><p>От Паласа до магазинов по всей стране: свежо, вкусно и по-честному.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ЦИФРЫ: «одометр» ============ -->
+<section class="stats">
+  <div class="stat"><div class="odo" data-to="6"></div><p>брендовых линеек</p></div>
+  <div class="stat"><div class="odo" data-to="35" data-suffix="+"></div><p>вкусов и видов продукции</p></div>
+  <div class="stat"><div class="odo" data-to="2022"></div><p>«Бренд года» Таджикистана</p></div>
+  <div class="stat"><div class="odo" data-to="100" data-suffix="%"></div><p>сок без концентратов в Fructo</p></div>
+</section>
+
+<!-- ============ НАГРАДЫ: колода раскрывается веером + 3D-наклон ============ -->
+<section class="awards" id="awards">
+  <div class="awards__head">
+    <p class="section-label">— Признание</p>
+    <h2 class="section-title split-lines">Бренд года.<br>Пик славы.</h2>
+  </div>
+  <div class="awards__deck">
+    <figure class="award" data-cursor="Смотреть">
+      <div class="award__card"><img src="assets/img/award-certificate.webp" alt="Шаҳодатнома «Бренди сол – 2022»" loading="lazy"><i class="award__sheen"></i></div>
+      <figcaption><b>Бренди сол — 2022</b>Шаҳодатнома за первое место. Министерство экономического развития и торговли РТ, 2023</figcaption>
+    </figure>
+    <figure class="award" data-cursor="Смотреть">
+      <div class="award__card"><img src="assets/img/award-trophy.webp" alt="Кубок «Brand of the Year 2022 — Peak of Glory»" loading="lazy"><i class="award__sheen"></i></div>
+      <figcaption><b>Peak of Glory</b>Кубок «Brand of the Year 2022» — Куллаи шараф</figcaption>
+    </figure>
+    <figure class="award" data-cursor="Смотреть">
+      <div class="award__card"><img src="assets/img/award-siposnoma.webp" alt="Сипоснома ООО «Шарбати Мева»" loading="lazy"><i class="award__sheen"></i></div>
+      <figcaption><b>Сипоснома</b>За вклад в развитие пищевой промышленности Согдийской области. Худжанд, 2023</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ ПРОИЗВОДСТВО: окно раскрывается на весь экран ============ -->
+<section class="factory" id="factory">
+  <div class="factory__stage">
+    <div class="factory__media"><img src="assets/img/factory.webp" alt="Производство ООО «Шарбати Мева» в Паласе"></div>
+    <div class="factory__copy">
+      <p class="section-label">— Производство</p>
+      <h2 class="factory__title">Сделано<br>в Паласе</h2>
+      <p class="factory__text">Собственное производство ООО «Шарбати Мева»: розлив воды, соков и лимонадов, консервирование овощей. Открыты для дистрибьюторов, магазинов и HoReCa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ КОНТАКТЫ ============ -->
+<section class="contact" id="contact">
+  <p class="section-label">— Сотрудничество</p>
+  <h2 class="contact__title"><span class="split-chars">Давайте</span><br><span class="split-chars">наполним</span><br><span class="split-chars outline">полки</span></h2>
+  <div class="contact__grid">
+    <a class="contact__phone" href="tel:+992928420088" data-cursor="Позвонить">+992 92 842 00 88</a>
+    <div class="contact__actions">
+      <a class="btn-liquid btn-liquid--big magnetic" href="tel:+992928420088"><span>Позвонить</span></a>
+      <a class="btn-liquid btn-liquid--big btn-liquid--ghost magnetic" href="https://wa.me/992928420088" target="_blank" rel="noopener"><span>WhatsApp</span></a>
+    </div>
+    <dl class="contact__info">
+      <div><dt>Компания</dt><dd>ООО «Шарбати Мева»</dd></div>
+      <div><dt>Бренд</dt><dd>«Родничок»</dd></div>
+      <div><dt>Адрес</dt><dd>Палас, Таджикистан</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <svg class="footer__waves" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+    <path class="w w1"/><path class="w w2"/><path class="w w3"/>
+  </svg>
+  <div class="footer__inner">
+    <img class="footer__logo" src="assets/img/logo-white.png" alt="Родничок">
+    <p>© <span class="year"></span> ООО «Шарбати Мева». Вода, соки, лимонады и консервация.</p>
+    <a href="#top" class="footer__top magnetic" data-cursor="Наверх">↑</a>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/js/water.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
