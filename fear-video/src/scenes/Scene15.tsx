@@ -110,8 +110,8 @@ export const Scene15: React.FC = () => {
         />
       </Layer>
       <Sfx name="whisper" at={164} volume={1} />
-      <Sfx name="whoosh" at={FLASH - 40} volume={0.9} />
-      <Sfx name="flash" at={FLASH} volume={1} />
+      <Sfx name="whoosh" at={FLASH - 40} volume={0.6} />
+      <Sfx name="flash" at={FLASH} volume={0.5} />
     </SceneFrame>
   );
 };

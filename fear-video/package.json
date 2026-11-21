@@ -31,8 +31,8 @@
     "lint": "eslint src && tsc",
     "audio": "node scripts/make-audio.mjs",
     "stills": "node scripts/stills.mjs",
-    "render": "remotion render Fear out/fear.mp4 --codec=h264 --crf=18 --audio-codec=aac --concurrency=4",
-    "render:silent": "remotion render Fear out/fear.mp4 --codec=h264 --crf=18 --props={\\\"audio\\\":false}"
+    "render": "remotion render Fear out/fear_raw.mp4 --codec=h264 --crf=18 --audio-codec=aac --pixel-format=yuv420p --image-format=png --concurrency=4 && ffmpeg -v error -y -i out/fear_raw.mp4 -c:v copy -af atrim=end_sample=7200000,alimiter=limit=0.85:level=false -c:a aac -b:a 256k -movflags +faststart out/fear.mp4",
+    "render:silent": "remotion render Fear out/fear.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --image-format=png --props={\\\"audio\\\":false}"
   },
   "allowScripts": {
     "esbuild": false

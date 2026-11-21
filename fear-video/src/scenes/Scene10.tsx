@@ -88,7 +88,7 @@ export const Scene10: React.FC = () => {
           : null}
       </Layer>
       <Sfx name="tie" at={10} volume={0.6} />
-      <Sfx name="impact" at={HIT} volume={1} />
+      <Sfx name="impact" at={HIT} volume={0.55} />
     </SceneFrame>
   );
 };

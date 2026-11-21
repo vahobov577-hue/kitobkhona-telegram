@@ -54,7 +54,7 @@ export const Video: React.FC<VideoProps> = ({audio}) => {
                       extrapolateLeft: 'clamp',
                       extrapolateRight: 'clamp',
                     })
-                  : 1
+                  : 0.82
               }
             />
           </Sequence>
