@@ -109,7 +109,7 @@ const E: React.FC = () => {
 const F: React.FC = () => {
   const {t} = useT();
   return (
-    <Shot bg="#cfcdc8" overlay={<Day n="DAY 18" />} cam={() => ({zoom: 1.9, fx: 520, fy: 330})}>
+    <Shot bg="#cfcdc8" overlay={<Day n="DAY 18" />} cam={() => ({zoom: 1.9, fx: 500, fy: 320, x: 500 - 960, y: 320 - 540})}>
       <Layer depth={1}>
         <Kitchen>
           <CalendarOnFridge checks={Math.floor(keys(t, [0, 40], [12, 18]))} draw={(t % 6) / 6 + 0.3} hello={false} />

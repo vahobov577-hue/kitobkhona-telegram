@@ -22,7 +22,7 @@ const A: React.FC = () => {
   const s = keys(t, [0, 5, 9, 14], [1.25, 0.96, 1.02, 1], EASE_OUT);
   const handY = keys(t, [0, 5, 16, 30], [260, 0, 0, 420]);
   return (
-    <Shot bg="#cfcdc8" cam={() => ({zoom: 2.4, fx: 560, fy: 320, x: t < 8 ? (8 - t) * 1.5 : 0})} zoom={[1, 1.02]}>
+    <Shot bg="#cfcdc8" cam={() => ({zoom: 2.4, fx: 560, fy: 320, x: 560 - 960 + (t < 8 ? (8 - t) * 1.5 : 0), y: 320 - 540})} zoom={[1, 1.02]}>
       <Layer depth={1}>
         <Kitchen>
           <g transform={`scale(${s})`}>
@@ -55,7 +55,7 @@ const B: React.FC = () => {
 };
 // insert: the plan, slow push
 const C3: React.FC = () => (
-  <Shot bg="#cfcdc8" cam={(t) => ({zoom: keys(t, [0, 90], [2.6, 2.9]), fx: 560, fy: 300})}>
+  <Shot bg="#cfcdc8" cam={(t) => ({zoom: keys(t, [0, 90], [2.6, 2.9]), fx: 560, fy: 300, x: 560 - 960, y: 300 - 540})}>
     <Layer depth={1}>
       <Kitchen>
         <Sheet x={0} y={0} s={0.42} lines={PLAN_LINES} />

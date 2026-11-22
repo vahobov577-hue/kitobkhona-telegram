@@ -39,7 +39,7 @@ const B: React.FC = () => {
   const {t} = useT();
   const s = keys(t, [0, 6, 10], [1.2, 0.97, 1], EASE);
   return (
-    <Shot bg="#cfcdc8" cam={() => ({zoom: 1.8, fx: 560, fy: 330})}>
+    <Shot bg="#cfcdc8" cam={() => ({zoom: 1.8, fx: 500, fy: 320, x: 500 - 960, y: 320 - 540})}>
       <Layer depth={1}>
         <Kitchen>
           <g transform={`scale(${s})`}>

@@ -57,7 +57,7 @@ const C3: React.FC = () => {
 const D: React.FC = () => {
   const {t} = useT();
   return (
-    <Shot bg="#cfcdc8" cam={() => ({zoom: 2.2, fx: 520, fy: 330})}>
+    <Shot bg="#cfcdc8" cam={() => ({zoom: 2.0, fx: 500, fy: 320, x: 500 - 960, y: 320 - 540})}>
       <Layer depth={1}>
         <Kitchen>
           <CalendarOnFridge checks={1} draw={Math.min(1, t / 16)} hello={false} />

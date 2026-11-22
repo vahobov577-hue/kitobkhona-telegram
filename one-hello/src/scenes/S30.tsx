@@ -47,7 +47,7 @@ const Seasons: React.FC<{k: number}> = ({k}) => {
 };
 
 const A: React.FC = () => (
-  <Shot bg="#cfcdc8" cam={() => ({zoom: 1.7, fx: 560, fy: 380})} drift={[20, 0]}>
+  <Shot bg="#cfcdc8" cam={() => ({zoom: 1.7, fx: 520, fy: 320, x: 520 - 960, y: 320 - 540})} drift={[20, 0]}>
     <Layer depth={1}>
       <Kitchen>
         {[3, 2, 1].map((k) => (

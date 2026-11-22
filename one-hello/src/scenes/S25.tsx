@@ -42,7 +42,7 @@ const B: React.FC = () => {
 };
 // insert: one empty cell — DAY 29
 const C3: React.FC = () => (
-  <Shot bg="#cfcdc8" cam={() => ({zoom: 1.9, fx: 520, fy: 360})}>
+  <Shot bg="#cfcdc8" cam={() => ({zoom: 1.9, fx: 500, fy: 320, x: 500 - 960, y: 320 - 540})}>
     <Layer depth={1}>
       <Kitchen>
         <CalendarSheet x={-60} y={10} s={0.5} title="1 HELLO A DAY" cells={cellsOf((i) => (i < 28 ? 'check' : i === 28 ? 'today' : 'empty'))} label={(i) => (i === 28 ? 'DAY 29' : undefined)} />
