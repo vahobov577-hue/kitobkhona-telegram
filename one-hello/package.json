@@ -1,0 +1,39 @@
+{
+  "name": "one-hello",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@remotion/cli": "4.0.545",
+    "@remotion/google-fonts": "^4.0.545",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.545"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.545",
+    "@types/react": "19.3.0",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "audio": "node scripts/make-audio.mjs",
+    "thumbnail": "remotion still Thumbnail out/thumbnail.png",
+    "render": "remotion render OneHello out/one_hello_raw.mp4 --codec=h264 --crf=18 --audio-codec=aac --pixel-format=yuv420p --image-format=png --concurrency=4 && ffmpeg -v error -y -i out/one_hello_raw.mp4 -c:v copy -af atrim=end_sample=14400000,alimiter=limit=0.85:level=false -c:a aac -b:a 256k -movflags +faststart out/one_hello.mp4",
+    "render:shorts": "mkdir -p out/shorts && remotion render Short1 out/shorts/short1.mp4 --codec=h264 --crf=18 --audio-codec=aac --pixel-format=yuv420p --image-format=png --concurrency=4 && remotion render Short2 out/shorts/short2.mp4 --codec=h264 --crf=18 --audio-codec=aac --pixel-format=yuv420p --image-format=png --concurrency=4 && remotion render Short3 out/shorts/short3.mp4 --codec=h264 --crf=18 --audio-codec=aac --pixel-format=yuv420p --image-format=png --concurrency=4"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}
