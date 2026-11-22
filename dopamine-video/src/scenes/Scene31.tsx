@@ -12,8 +12,8 @@ const PAIR = 75;
 
 const Half: React.FC<{side: 0 | 1; children: React.ReactNode; enter: number; grey?: boolean}> = ({side, children, enter, grey}) => {
   const f = useCurrentFrame();
-  const dx = ramp(f, enter, enter + 10, side ? 400 : -400, 0, EASE_OUT);
-  const op = ramp(f, enter, enter + 6);
+  const dx = enter === 0 ? ramp(f, 0, 10, side ? 400 : -400, 0, EASE_OUT) : ramp(f, enter, enter + 8, side ? 120 : -120, 0, EASE_OUT);
+  const op = enter === 0 ? ramp(f, 0, 6) : ramp(f, enter, enter + 4, 0.55, 1);
   return (
     <div style={{position: 'absolute', left: side ? 966 : 0, top: 0, width: 954, height: 1080, overflow: 'hidden', background: side ? '#17130f' : '#111', filter: grey ? 'grayscale(1) brightness(0.8)' : undefined}}>
       <svg width={954} height={1080} viewBox="483 90 954 1080" style={{transform: `translateX(${dx}px) scale(1.15)`, opacity: op, transformOrigin: '50% 60%'}}>
@@ -36,7 +36,7 @@ export const Scene31: React.FC = () => {
       <Glow cx={1060} cy={FLOOR_Y - 120} r={200} color={C.screen} opacity={0.5} />
       <Hero x={1000} y={FLOOR_Y - 92} frame={f} pose="lieBed" emotion="empty" rig={{armF: [170, 30]}} handItem={<HandPhone rot={-90} screen="feed" scroll={f * 2} />} />
     </g>,
-    <g key="l1">
+    <g key="l1" transform="translate(260 0)">
       <DinnerTable f={f} friendOp={[0, 0, 0]} />
     </g>,
     <g key="l2">
@@ -60,7 +60,7 @@ export const Scene31: React.FC = () => {
       ))}
       <Hero x={960} y={FLOOR_Y} frame={f} pose="run" headband emotion="smile" wind={2} />
     </g>,
-    <g key="r1">
+    <g key="r1" transform="translate(200 0)">
       <Glow cx={1000} cy={400} r={600} color="#ffb661" opacity={0.3} />
       <DinnerTable f={f} warm={[1, 1, 1]} laugh={[1, 1, 1]} heroPhone={false} heroEmotion="smile" chains={false} />
     </g>,
