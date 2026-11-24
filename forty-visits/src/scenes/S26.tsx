@@ -30,7 +30,7 @@ const A: React.FC = () => {
         <HomeOutside gate={gate} inWindow={<Inside g={g} />} />
         {SAM({x: keys(t, [0, 40, 80, 100], [380, 540, 600, 660], EASE), y: 900, frame: g, scale: 1.5, pose: t < 40 || t > 80 ? 'walk' : 'stand', back: true, handItem: <rect x={-30} y={-10} width={70} height={50} rx={3} fill="#f6efe0" />})}
       </Layer>
-      <Sfx name="wind" at={0} volume={0.5} dur={100} />
+      <Sfx name="wind" at={0} volume={0.22} dur={100} />
       <Sfx name="creak" at={44} volume={0.8} />
     </Shot>
   );
@@ -46,7 +46,7 @@ const B: React.FC = () => {
       <Layer depth={1.25} blur={14}>
         {SAM({x: 860, y: 1300, frame: g, scale: 3.2, pose: 'stand', back: true})}
       </Layer>
-      <Sfx name="wind" at={0} volume={0.4} dur={100} />
+      <Sfx name="wind" at={0} volume={0.18} dur={100} />
       <Sfx name="clock" at={0} volume={0.5} dur={100} />
     </Shot>
   );
@@ -73,7 +73,7 @@ const C3: React.FC = () => {
       {[30, 46, 62].map((a) => (
         <Sfx key={a} name="knock" at={a} volume={0.9} />
       ))}
-      <Sfx name="wind" at={0} volume={0.3} dur={100} />
+      <Sfx name="wind" at={0} volume={0.15} dur={100} />
     </Shot>
   );
 };
