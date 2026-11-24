@@ -14,7 +14,7 @@ const A: React.FC = () => {
         <ChildhoodRoom />
         {SAM({x: 1180, y: 900, frame: g, scale: 1.5, pose: 'sit', expr: 'neutral', look: [3, 3], rig: {armF: [60, 10]}})}
       </Layer>
-      <Sfx name="tick" at={0} volume={0.3} dur={90} />
+      <Sfx name="clock" at={0} volume={0.3} dur={90} />
     </Shot>
   );
 };

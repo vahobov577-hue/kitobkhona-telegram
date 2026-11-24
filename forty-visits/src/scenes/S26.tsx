@@ -47,7 +47,7 @@ const B: React.FC = () => {
         {SAM({x: 860, y: 1300, frame: g, scale: 3.2, pose: 'stand', back: true})}
       </Layer>
       <Sfx name="wind" at={0} volume={0.4} dur={100} />
-      <Sfx name="tick" at={0} volume={0.5} dur={100} />
+      <Sfx name="clock" at={0} volume={0.5} dur={100} />
     </Shot>
   );
 };
