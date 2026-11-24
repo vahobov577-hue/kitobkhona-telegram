@@ -60,18 +60,18 @@ export const SHORT1: Seg[] = [
   {scene: 'S01', idx: 1, fx: 960},
   {scene: 'S02', idx: 0, fx: 960},
   {scene: 'S02', idx: 1, fx: 960},
-  {scene: 'S03', idx: 0, fx: 960},
+  {scene: 'S03', idx: 0, fx: 1250},
   {scene: 'S03', idx: 1, fx: 960},
   {scene: 'S04', idx: 0, fx: 960},
   {scene: 'S04', idx: 1, fx: 960},
   {scene: 'S05', idx: 0, fx: 960},
 ];
 export const SHORT2: Seg[] = [
-  {scene: 'S11', idx: 0, fx: 960},
+  {scene: 'S11', idx: 0, fx: 660},
   {scene: 'S11', idx: 1, fx: 960},
-  {scene: 'S11', idx: 2, fx: 960},
+  {scene: 'S11', idx: 2, fx: 700},
   {scene: 'S12', idx: 3, fx: 960},
-  {scene: 'S13', idx: 0, fx: 960},
+  {scene: 'S13', idx: 0, fx: 880},
   {scene: 'S13', idx: 1, fx: 960},
   {scene: 'S13', idx: 2, fx: 960},
 ];
